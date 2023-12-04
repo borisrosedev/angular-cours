@@ -5,6 +5,7 @@
 
 body {
     margin: 0;
+    background-color: black;
 }
 
 
@@ -16,6 +17,19 @@ html {
     display: flex;
     margin-top: 10vh;
     height: 90vh;
-
+    opacity: 0;
+    animation: pageAnimation 1000ms ease-in-out forwards;
 
 }
+
+@keyframes pageAnimation {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+

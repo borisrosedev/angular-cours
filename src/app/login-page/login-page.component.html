@@ -1,5 +1,20 @@
 <main class="page login-page">
+    <section class="login-page__title-container">
+        <app-title title="Login Page" [hNumber]="1"></app-title>
+    </section>
+    <video class="login-page__video" autoplay loop muted>
+        <source src="assets/sea.mp4" type="video/mp4">
+    </video>
 
-    <app-title title="Login Page" [hNumber]="1"></app-title>
 
+    <section class="login-page__form-container">
+        <!-- le composant form attend vu les @input trois informations : formData, 
+        onFormSubmit et context, ici nous lui transmettons ces informations -->
+        <app-form 
+        [formData]="formData" 
+        [onFormSubmit]="onFormSubmit"
+        [context]="'login'"
+        >
+        </app-form>
+    </section>
 </main>

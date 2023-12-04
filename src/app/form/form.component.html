@@ -1,0 +1,22 @@
+<form (submit)="onFormSubmit()" class="form-container">
+
+    <section class="form-container__title-container">
+        <app-title 
+        [hNumber]="2" 
+        [title]="context === 'login' ? 'Formulaire de connexion' : 'Formulaire d\'inscription' ">
+        </app-title>
+    </section>
+
+    <section class="form-container__inputs-container">
+
+        <app-input 
+        *ngFor="let inputData of formData; let i = index" 
+        [inputData]="inputData">
+
+        </app-input>
+
+    </section>
+
+
+
+</form>

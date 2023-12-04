@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormInputModel } from '../interfaces/form-input-model';
 
 @Component({
   selector: 'app-login-page',
@@ -7,4 +8,30 @@ import { Component } from '@angular/core';
 })
 export class LoginPageComponent {
 
+  // formData:FormInputModel[] = []
+  formData:Array<FormInputModel> = [
+
+    {
+      name: 'email',
+      placeholder: 'ex:adam@gmail.com',
+      type: 'email' // pour éviter les attaques XSS / injections SQL
+    }, 
+    {
+      name: 'password',
+      placeholder: '******',
+      type: 'password'
+    }
+
+  ]
+
+  onFormSubmit = () => {
+    console.log('🧤 clicked on onFormSubmit')
+  }
+
+
 }
+
+
+
+
+

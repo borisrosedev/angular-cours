@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { IconDefinition, faChessRook } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-landing-page',
@@ -7,6 +8,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 })
 export class LandingPageComponent implements OnInit, OnDestroy {
   title:string = 'Cantinière'
+  faLogo:IconDefinition = faChessRook
   // isConnected:boolean = false;
 
 

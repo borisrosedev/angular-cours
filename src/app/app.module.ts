@@ -9,6 +9,8 @@ import { NotFoundPageComponent } from './not-found-page/not-found-page.component
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HeaderComponent } from './header/header.component';
 import { TitleComponent } from './title/title.component';
+import { FormComponent } from './form/form.component';
+import { InputComponent } from './input/input.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { TitleComponent } from './title/title.component';
     LoginPageComponent,
     NotFoundPageComponent,
     HeaderComponent,
-    TitleComponent
+    TitleComponent,
+    FormComponent,
+    InputComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,9 @@
+<article class="input-container">
+     <label for="inputData.name"> {{ inputData.name.charAt(0).toUpperCase() + inputData.name.slice(1).toLowerCase() }}</label>
+    <input 
+    class="input-container__input"
+    [name]="inputData.name" 
+    [placeholder]="inputData.placeholder"
+    [type]="inputData.type"
+    [id]="inputData.name">
+</article>
