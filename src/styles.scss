@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+
+html {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.page {
+    display: flex;
+    margin-top: 10vh;
+    height: 90vh;
+
+
+}
