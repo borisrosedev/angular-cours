@@ -8,6 +8,7 @@ import { Component, Input } from '@angular/core';
 export class TitleComponent {
 
   @Input() title!:string
+  @Input() hNumber!:number
 
   ngOnInit(){
     console.log('✅ Title component has mounted', this.title)

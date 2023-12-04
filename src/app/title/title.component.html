@@ -1,5 +1,11 @@
-<h1 class="title-component__h">
+<h1 class="title-component__h" *ngIf="hNumber == 1">
     {{ title }}
 </h1>
+<h2 class="title-component__h" *ngIf="hNumber == 2">
+    {{ title }}
+</h2>
+<h3 class="title-component__h" *ngIf="hNumber == 3">
+    {{ title }}
+</h3>
 
 

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { IconDefinition, faRightToBracket } from '@fortawesome/free-solid-svg-icons';
+import { IconDefinition, faRightToBracket, faChessRook } from '@fortawesome/free-solid-svg-icons';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-header',
@@ -8,4 +10,17 @@ import { IconDefinition, faRightToBracket } from '@fortawesome/free-solid-svg-ic
 })
 export class HeaderComponent {
   faLogin = faRightToBracket
+  faLogo = faChessRook
+
+  constructor(private router: Router){}
+  // arrow function
+  onLoginClick = () => {
+    console.log('🧤 clicked on loginIcon')
+    this.router.navigate(['login-page'])
+  }
+
+  onLandingClick = () => {
+    this.router.navigate(['']);
+  }
+
 }
