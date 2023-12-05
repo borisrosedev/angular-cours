@@ -14,7 +14,7 @@ import { NotificationComponent } from './notification/notification.component';
 import { MenuPageComponent } from './menu-page/menu-page.component';
 import { HttpClientModule } from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
-import { DayCardComponent } from './day-card/day-card.component';
+import { CardComponent } from './card/card.component';
 
 //HttpClientModule est le module (la classe ) qui vous permettra de consommer
 // une api (distante) 
@@ -33,7 +33,7 @@ import { DayCardComponent } from './day-card/day-card.component';
     InputComponent,
     NotificationComponent,
     MenuPageComponent,
-    DayCardComponent,
+    CardComponent,
   ],
   imports: [
     BrowserModule,

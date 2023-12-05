@@ -1,5 +1,5 @@
 .menu-page {
-    flex-direction: column;
+    flex-direction: row;
     &__video {
         object-fit: cover;
         width: 100%;
@@ -9,5 +9,11 @@
     }
     &__day-cards-container {
         z-index: 2;
+        display: flex;
+        flex-direction: row;
+    }
+
+    &--modifier {
+        height: 100%;
     }
 }

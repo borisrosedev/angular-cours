@@ -24,6 +24,7 @@ export class MenuPageComponent {
       console.log('menues from menu-page', this.menues)
     })
 
+
  
   }
 

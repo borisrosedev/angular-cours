@@ -1,4 +1,4 @@
-<main class="page menu-page">
+<main class="page menu-page menu-page--modifier">
 
     <video class="menu-page__video" autoplay loop muted>
         <source src="assets/coffee.mp4" type="video/mp4">
@@ -7,10 +7,14 @@
     <section class="menu-page__day-cards-container">
 
         <!-- Composant enfant : day card -->
-        <app-day-card *ngFor="let menu of menues" [data]="menu">
-
-        </app-day-card>
-      
+        <app-card 
+        *ngFor="let menu of menues; let i = index" 
+        [data]="menu"
+        [context]="'menu'"
+        [index]="i"
+        >
+        </app-card>
+        
 
     </section>
 

@@ -1,0 +1,30 @@
+<article [ngSwitch]="context">
+
+    <ng-container *ngSwitchCase="'menu'">
+
+        <header class="card-container__title-container">
+            <app-title [title]="'Menu'" [hNumber]="2"></app-title>
+            du {{ translator(index)}}
+        </header>
+    
+
+        <article>
+
+            <h3> {{ data[0].title }} </h3>
+
+            
+
+        </article>
+
+        <article>
+
+            <h3> {{ data[1].title }} </h3>
+            
+
+        </article>
+
+
+    </ng-container>
+
+
+</article>
