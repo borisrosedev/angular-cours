@@ -1,0 +1,13 @@
+.menu-page {
+    flex-direction: column;
+    &__video {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 1;  
+    }
+    &__day-cards-container {
+        z-index: 2;
+    }
+}

@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
+import { MenuPageComponent } from './menu-page/menu-page.component';
 
 
 
@@ -15,16 +16,21 @@ const routes: Routes = [
   },
   {
     path: 'landing-page',
-    component: LandingPageComponent
+    component: LandingPageComponent,
   },
   {
     path: 'login-page',
     component: LoginPageComponent
   },
   {
+    path:'menu-page',
+    component: MenuPageComponent
+  },
+  {
     path: '**',
     component: NotFoundPageComponent
-  }
+  },
+ 
 
 
 

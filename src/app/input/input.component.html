@@ -1,5 +1,5 @@
 <article class="input-container">
-     <label for="inputData.name"> {{ inputData.name.charAt(0).toUpperCase() + inputData.name.slice(1).toLowerCase() }}</label>
+     <label for="inputData.name"> {{inputData.name | titlecase}} </label>
     <input 
     class="input-container__input"
     [name]="inputData.name" 

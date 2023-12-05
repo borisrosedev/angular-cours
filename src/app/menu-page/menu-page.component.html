@@ -1,0 +1,17 @@
+<main class="page menu-page">
+
+    <video class="menu-page__video" autoplay loop muted>
+        <source src="assets/coffee.mp4" type="video/mp4">
+    </video>
+
+    <section class="menu-page__day-cards-container">
+
+        <!-- Composant enfant : day card -->
+        <app-day-card *ngFor="let obj of weekDays; let i = index" [data]="obj">
+
+        </app-day-card>
+
+    </section>
+
+</main>
+
