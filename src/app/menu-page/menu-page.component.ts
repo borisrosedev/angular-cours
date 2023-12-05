@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { weekDays } from 'src/models/WeekDays';
 import { MenuService } from '../menu.service';
+import { Subscription } from 'rxjs';
+import { DishModel } from '../interfaces/dish-model';
 
 
 @Component({
@@ -9,11 +11,24 @@ import { MenuService } from '../menu.service';
   styleUrls: ['./menu-page.component.scss']
 })
 export class MenuPageComponent {
+  menuesSubscription!:Subscription
+  menues!:Array<DishModel>
+
   // attribut de la classe il n'y a pas de mot clé devant (var const let )
   constructor(private menuService: MenuService){}
-
+  
   ngOnInit(){
     this.menuService.getMenues()
+    this.menuesSubscription = this.menuService.getMenues().subscribe((data:any) => {
+      this.menues = data
+      console.log('menues from menu-page', this.menues)
+    })
+
+ 
+  }
+
+  ngOnDestroy(){
+    this.menuesSubscription.unsubscribe()
   }
 
 
