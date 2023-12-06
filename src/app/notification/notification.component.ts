@@ -16,18 +16,13 @@ import {
   styleUrls: ['./notification.component.scss'],
   animations: [
     trigger('messageContentEmitted', [
-      // ...
-      state('reveal', style({
-        opacity: 1,
-       
-      })),
-      state('hide', style({
-        opacity: 0,
-      })),
-      transition('reveal => hide', [
-        animate('2s')
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate('1000ms', style({ opacity: 1 })),
       ]),
-     
+      transition(':leave', [
+        animate('1000ms', style({ opacity: 0 }))
+      ])
     ]),
   ],
 })

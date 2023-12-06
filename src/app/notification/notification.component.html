@@ -1,4 +1,3 @@
-<aside [@messageContentEmitted]="content ? 'reveal' : 'hide'" class="notification-container">
+<aside @messageContentEmitted *ngIf="content" class="notification-container">
     <p>{{ content }}</p>
-
 </aside>
