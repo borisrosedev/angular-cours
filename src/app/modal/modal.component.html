@@ -1,0 +1,12 @@
+<section class="modal">
+    <section id="action">
+        <fa-icon 
+        [icon]="faClose" 
+        (click)="modalRepasService.showModal = false"
+        >
+        </fa-icon>
+
+        <ng-content select=".class-1"></ng-content>
+        <ng-content select=".class-2"></ng-content>
+    </section>
+</section>

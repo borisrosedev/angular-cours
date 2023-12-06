@@ -3,6 +3,7 @@ import { weekDays } from 'src/models/WeekDays';
 import { MenuService } from '../menu.service';
 import { Subscription } from 'rxjs';
 import { DishModel } from '../interfaces/dish-model';
+import { ModalRepasService } from '../modal-repas.service';
 
 
 @Component({
@@ -15,7 +16,8 @@ export class MenuPageComponent {
   menues!:Array<DishModel>
 
   // attribut de la classe il n'y a pas de mot clé devant (var const let )
-  constructor(private menuService: MenuService){}
+  constructor(private menuService: MenuService,
+              public modalRepasService: ModalRepasService){}
   
   ngOnInit(){
     this.menuService.getMenues()

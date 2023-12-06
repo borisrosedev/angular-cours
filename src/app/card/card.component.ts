@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import translateIndexToDay from '../utils/translateIndexToDay';
+import { ModalRepasService } from '../modal-repas.service';
 
 @Component({
   selector: 'app-card',
@@ -14,7 +15,7 @@ export class CardComponent {
   @Input() onClickButton!:(obj:any, specifics:any) => void
   translator!:(index:any) => "Lundi" | "Mardi" | "Mercredi" | "Jeudi" | "Vendredi" | undefined
 
-  constructor(){
+  constructor(public modalRepasService:ModalRepasService){
     this.translator = translateIndexToDay
   }
 
