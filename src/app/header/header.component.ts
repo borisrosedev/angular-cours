@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IconDefinition, faRightToBracket, faChessRook } from '@fortawesome/free-solid-svg-icons';
+import { IconDefinition, faRightToBracket, faChessRook, faBookOpen, faClipboardList } from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
 
 
@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
 export class HeaderComponent {
   faLogin = faRightToBracket
   faLogo = faChessRook
+  faMenu = faBookOpen
+  faCarte = faClipboardList
 
   constructor(private router: Router){}
   // arrow function

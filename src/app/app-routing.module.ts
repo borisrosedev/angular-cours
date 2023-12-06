@@ -4,6 +4,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 import { MenuPageComponent } from './menu-page/menu-page.component';
+import { CartePageComponent } from './carte-page/carte-page.component';
 
 
 
@@ -27,9 +28,14 @@ const routes: Routes = [
     component: MenuPageComponent
   },
   {
+    path:'carte-page',
+    component: CartePageComponent
+  },
+  {
     path: '**',
     component: NotFoundPageComponent
   },
+
  
 
 

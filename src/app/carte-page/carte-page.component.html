@@ -1,0 +1,20 @@
+<main class="page carte-page">
+
+    <video class="carte-page__video" autoplay loop muted>
+        <source src="assets/carte.mp4" type="video/mp4">
+    </video>
+
+    <section class="carte-page__dishes-card-container">
+        <app-dish-card 
+        *ngFor="let dish of dishes; let i = index" 
+        [data]="dish"
+        [context]="'dish'"
+        >
+        </app-dish-card>
+
+    </section>
+  
+
+
+</main>
+
