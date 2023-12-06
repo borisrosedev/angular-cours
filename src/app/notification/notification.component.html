@@ -1,3 +1,4 @@
-<aside>
-    {{ content ? content : 'Aucun contenu'}}
+<aside [@messageContentEmitted]="content ? 'reveal' : 'hide'" class="notification-container">
+    <p>{{ content }}</p>
+
 </aside>

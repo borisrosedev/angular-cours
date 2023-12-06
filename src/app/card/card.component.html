@@ -1,30 +1,21 @@
-<article [ngSwitch]="context">
-
+<article [ngSwitch]="context" class="card-container card-animation--{{index + 1}}">
     <ng-container *ngSwitchCase="'menu'">
-
         <header class="card-container__title-container">
-            <app-title [title]="'Menu'" [hNumber]="2"></app-title>
-            du {{ translator(index)}}
+            <h2>Menu du {{ translator(index)}}</h2>
         </header>
-    
-
-        <article>
-
-            <h3> {{ data[0].title }} </h3>
-
-            
-
-        </article>
-
-        <article>
-
-            <h3> {{ data[1].title }} </h3>
-            
-
-        </article>
-
-
+        <section class="card-container__dishes-container">
+            <article *ngFor="let dish of data; let i = index" class="card-container__dish-container">
+                <header>
+                        <app-title [title]="dish.title" [hNumber]="3"></app-title>
+                </header>
+                <section class="card-container__image-container">
+                        <img [src]="dish.url">
+                </section>
+                <footer class="card-container__actions-container">
+                        <button (click)="onClickButton(dish, index)" [attr.aria-label]="actionButton"> {{ actionButton }} </button>
+                </footer>
+            </article>
+        </section>
+     
     </ng-container>
-
-
 </article>

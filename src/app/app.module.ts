@@ -15,7 +15,7 @@ import { MenuPageComponent } from './menu-page/menu-page.component';
 import { HttpClientModule } from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
 import { CardComponent } from './card/card.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //HttpClientModule est le module (la classe ) qui vous permettra de consommer
 // une api (distante) 
 
@@ -40,7 +40,8 @@ import { CardComponent } from './card/card.component';
     AppRoutingModule,
     FontAwesomeModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
 
   ],
   providers: [],

@@ -4,7 +4,7 @@
         <source src="assets/coffee.mp4" type="video/mp4">
     </video>
 
-    <section class="menu-page__day-cards-container">
+    <section class="menu-page__day-cards-container" *ngIf="menues" else elseBlock>
 
         <!-- Composant enfant : day card -->
         <app-card 
@@ -12,11 +12,16 @@
         [data]="menu"
         [context]="'menu'"
         [index]="i"
+        actionButton="Valider"
         >
         </app-card>
+        <ng-template #elseBlock class="menu-page__day-no-cards-container">
+            <p> Aucun Menu Actuellement </p>
+        </ng-template>
         
 
     </section>
+ 
 
 </main>
 

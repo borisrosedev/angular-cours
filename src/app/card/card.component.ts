@@ -10,6 +10,8 @@ export class CardComponent {
   @Input() data!:any
   @Input() context!:string
   @Input() index!:number
+  @Input() actionButton!:string
+  @Input() onClickButton!:(obj:any, specifics:any) => void
   translator!:(index:any) => "Lundi" | "Mardi" | "Mercredi" | "Jeudi" | "Vendredi" | undefined
 
   constructor(){
