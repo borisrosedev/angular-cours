@@ -5,6 +5,7 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 import { MenuPageComponent } from './menu-page/menu-page.component';
 import { CartePageComponent } from './carte-page/carte-page.component';
+import { CartPageComponent } from './cart-page/cart-page.component';
 
 
 
@@ -30,6 +31,10 @@ const routes: Routes = [
   {
     path:'carte-page',
     component: CartePageComponent
+  },
+  {
+    path: 'cart-page',
+    component: CartPageComponent
   },
   {
     path: '**',

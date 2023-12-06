@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IconDefinition, faRightToBracket, faChessRook, faBookOpen, faClipboardList } from '@fortawesome/free-solid-svg-icons';
+import { IconDefinition, faRightToBracket, faChessRook, faBookOpen, faClipboardList, faBagShopping } from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
 
 
@@ -13,6 +13,7 @@ export class HeaderComponent {
   faLogo = faChessRook
   faMenu = faBookOpen
   faCarte = faClipboardList
+  faCart = faBagShopping
 
   constructor(private router: Router){}
   // arrow function
@@ -23,6 +24,10 @@ export class HeaderComponent {
 
   onLandingClick = () => {
     this.router.navigate(['']);
+  }
+
+  onCartClick = () => {
+    this.router.navigate(['cart-page'])
   }
 
 }

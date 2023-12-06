@@ -30,9 +30,82 @@ header {
     color: white;
     transition: all 300ms ease-in-out;
     &:hover {
-    
         cursor: pointer;
         transform: scale(1.5);
     }
+
+    &--bounce {
+        margin: 0 100px;
+        animation: scaleAnimation 1s ease-in-out;
+        animation-iteration-count: 2;
+    }
+    
+    
+    
+}
+
+
+.swing {
+    margin: 0 40px;
+    &:hover {
+        display: inline-block;
+        animation: swing 2s ease-in-out infinite;
+        cursor: pointer;
+       
+
+    }
+    
+}
+
+@keyframes swing {
+    0% { transform: rotate(0deg) scale(1.5); }
+    20% { transform: rotate(15deg) scale(1.5); }
+    40% { transform: rotate(-10deg) scale(1.5); }
+    60% { transform: rotate(5deg) scale(1.5); }
+    80% { transform: rotate(-5deg) scale(1.5); }
+    100% { transform: rotate(0deg) scale(1.5); }
+}
+
+
+
+
+
+
+
+
+@keyframes scaleAnimation {
+
+    from {
+        transform: scale(2);
+    }
+
+    to {
+        transform: scale(0);
+    }
+    
+}
+
+@keyframes bounceAnimation {
+
+    0% {
+        transform: rotateX(0);
+    }
+
+    25% {
+        transform: rotateX(35deg);
+    }
+
+    50% {
+        transform: rotate(-35deg);
+    }
+
+    75% {
+        transform: rotateX(-35deg);
+    }
+
+    100% {
+        transform: rotateX(35deg);
+    }
+
     
 }

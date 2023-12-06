@@ -18,6 +18,7 @@ import { CardComponent } from './card/card.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CartePageComponent } from './carte-page/carte-page.component';
 import { DishCardComponent } from './dish-card/dish-card.component';
+import { CartPageComponent } from './cart-page/cart-page.component';
 //HttpClientModule est le module (la classe ) qui vous permettra de consommer
 // une api (distante) 
 
@@ -38,6 +39,7 @@ import { DishCardComponent } from './dish-card/dish-card.component';
     CardComponent,
     CartePageComponent,
     DishCardComponent,
+    CartPageComponent,
   ],
   imports: [
     BrowserModule,
