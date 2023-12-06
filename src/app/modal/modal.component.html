@@ -1,9 +1,11 @@
-<section class="modal">
-    <section id="action">
-        <fa-icon 
+<section class="modal-container">
+  
+    <fa-icon 
         [icon]="faClose" 
         (click)="modalRepasService.showModal = false"
-        >
-        </fa-icon>
-    </section>
+    >
+    </fa-icon>
+
+    <ng-content></ng-content>
+
 </section>

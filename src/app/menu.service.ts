@@ -18,7 +18,7 @@ export class MenuService {
     return this.http.get<any>('https://aston-server-app.onrender.com/api/menu')
   }
 
-  getOneMenueFromId(id:number){
+  getOneMenuFromId(id:number){
     return this.http.get<any>('https://aston-server-app.onrender.com/api/menu/' + id)
   }
 

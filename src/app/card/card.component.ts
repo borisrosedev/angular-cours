@@ -12,7 +12,8 @@ export class CardComponent {
   @Input() context!:string
   @Input() index!:number
   @Input() actionButton!:string
-  @Input() onClickButton!:(obj:any, specifics:any) => void
+  @Input() onClickButton!:(obj:any) => void
+  @Input() specifics?:any
   translator!:(index:any) => "Lundi" | "Mardi" | "Mercredi" | "Jeudi" | "Vendredi" | undefined
 
   constructor(public modalRepasService:ModalRepasService){
@@ -22,4 +23,6 @@ export class CardComponent {
   ngOnInit(){
     console.log('✅ card component has mounted', this.data, this.context, this.index)
   }
+
+  
 }

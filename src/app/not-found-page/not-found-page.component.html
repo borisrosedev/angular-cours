@@ -1,5 +1,11 @@
-<main class="page">
-    <h1>
-        <strong>{{ errorMessage }}</strong>
-    </h1>
+<main class="page not-found-page">
+
+    <section [@errorEmitter]="showMessage" class="error-message-container">
+
+        <h1>
+            {{ errorMessage }}
+        </h1>
+
+    </section>
+
 </main>

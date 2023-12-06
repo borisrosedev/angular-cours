@@ -1,7 +1,7 @@
-<article [ngSwitch]="context" class="card-container card-animation--{{index + 1}}">
+<article [ngSwitch]="context" class="card-container card-animation--{{(index ? index : 0) + 1}}">
     <ng-container *ngSwitchCase="'menu'">
         <header class="card-container__title-container">
-            <h2>Menu du {{ translator(index)}}</h2>
+            <h2 appTitleStyle>Menu du {{ translator(index)}}</h2>
         </header>
         <section class="card-container__dishes-container">
             <article *ngFor="let dish of data; let i = index" class="card-container__dish-container">
@@ -9,13 +9,19 @@
                         <app-title [title]="dish.title" [hNumber]="3"></app-title>
                 </header>
                 <section class="card-container__image-container">
-                        <img [src]="dish.url">
+                        <img [src]="dish.url" [alt]="dish.name">
                 </section>
                 <footer class="card-container__actions-container">
-                        <button (click)="modalRepasService.showModal = true" [attr.aria-label]="actionButton"> {{ actionButton }} </button>
+                        <button (click)="onClickButton(dish)" [attr.aria-label]="actionButton"> {{ actionButton }} </button>
                 </footer>
             </article>
         </section>
      
+    </ng-container>
+
+    <ng-container *ngSwitchCase="'dish-details'">
+
+        <app-title [title]="specifics.name" [hNumber]="3"></app-title>
+
     </ng-container>
 </article>

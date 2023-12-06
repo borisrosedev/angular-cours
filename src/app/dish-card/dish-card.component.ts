@@ -9,4 +9,5 @@ export class DishCardComponent {
   @Input() data!:any
   @Input() context!:string
   @Input() title!:string
+  chosenColor= 'lightGreen'
 }

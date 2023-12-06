@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { weekDays } from 'src/models/WeekDays';
 import { MenuService } from '../menu.service';
 import { Subscription } from 'rxjs';
 import { DishModel } from '../interfaces/dish-model';
 import { ModalRepasService } from '../modal-repas.service';
+import { NotificationService } from '../notification.service';
 
 
 @Component({
@@ -14,10 +14,13 @@ import { ModalRepasService } from '../modal-repas.service';
 export class MenuPageComponent {
   menuesSubscription!:Subscription
   menues!:Array<DishModel>
+  specificDish!:DishModel | {}
 
   // attribut de la classe il n'y a pas de mot clé devant (var const let )
   constructor(private menuService: MenuService,
-              public modalRepasService: ModalRepasService){}
+              private notificationService: NotificationService,
+              public modalRepasService: ModalRepasService
+            ){}
   
   ngOnInit(){
     this.menuService.getMenues()
@@ -25,14 +28,24 @@ export class MenuPageComponent {
       this.menues = data
       console.log('menues from menu-page', this.menues)
     })
-
-
- 
   }
 
   ngOnDestroy(){
     this.menuesSubscription.unsubscribe()
   }
+
+  showSpecificDish(dish:DishModel){
+    this.modalRepasService.showModal = true
+    this.specificDish = dish
+    this.notificationService.sendMessage('Bonne sélection')
+  }
+
+  onCloseModal(){
+    this.modalRepasService.showModal = false
+    this.specificDish = {}
+  }
+
+
 
 
 }

@@ -1,4 +1,6 @@
-<app-modal *ngIf="modalRepasService.showModal"></app-modal>
+<app-modal *ngIf="modalRepasService.showModal && specificDish">
+        <app-card [context]="'dish-details'" [data]="specificDish"></app-card>
+</app-modal>
 
 <main class="page menu-page menu-page--modifier">
 
@@ -15,6 +17,7 @@
         [context]="'menu'"
         [index]="i"
         [actionButton]="'Choisir'"
+        [onClickButton]="showSpecificDish"
         >
         </app-card>
         <ng-template #elseBlock class="menu-page__day-no-cards-container">
