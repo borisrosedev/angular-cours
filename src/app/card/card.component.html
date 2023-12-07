@@ -1,4 +1,6 @@
-<article [ngSwitch]="context" class="card-container card-animation--{{index + 1}}">
+<article [ngSwitch]="context" class="card-container card-animation--{{(index ? index + 1 : 0)}}">
+   
+    <!-- MENU CASE-->
     <ng-container *ngSwitchCase="'menu'">
         <header class="card-container__title-container">
             <h2>Menu du {{ translator(index)}}</h2>
@@ -16,6 +18,24 @@
                 </footer>
             </article>
         </section>
-     
     </ng-container>
+
+
+    <ng-container *ngSwitchCase="'user'">
+
+        <header class="card-container__user-title">
+            <h2> {{ data.firstname}}  {{data.lastname }} </h2>
+        </header>
+
+        <section class="card-container__user-photo">
+            <img [src]="data.url" [alt]="'portrait de {{data.firstname}} {{data.lastname}}'">
+        </section>
+
+        <section class="card-container__user-email">
+            <p> Email : {{ data.email }} </p>
+        </section>
+    
+    </ng-container>
+
+
 </article>

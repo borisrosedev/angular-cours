@@ -20,6 +20,7 @@ import { CartePageComponent } from './carte-page/carte-page.component';
 import { DishCardComponent } from './dish-card/dish-card.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
 import { ModalComponent } from './modal/modal.component';
+import { AdminPageComponent } from './admin-page/admin-page.component';
 //HttpClientModule est le module (la classe ) qui vous permettra de consommer
 // une api (distante) 
 
@@ -42,6 +43,7 @@ import { ModalComponent } from './modal/modal.component';
     DishCardComponent,
     CartPageComponent,
     ModalComponent,
+    AdminPageComponent,
   ],
   imports: [
     BrowserModule,

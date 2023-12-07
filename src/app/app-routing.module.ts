@@ -6,6 +6,7 @@ import { NotFoundPageComponent } from './not-found-page/not-found-page.component
 import { MenuPageComponent } from './menu-page/menu-page.component';
 import { CartePageComponent } from './carte-page/carte-page.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
+import { AdminPageComponent } from './admin-page/admin-page.component';
 
 
 
@@ -37,14 +38,14 @@ const routes: Routes = [
     component: CartPageComponent
   },
   {
+    path: 'admin-page',
+    component:AdminPageComponent
+  },
+  {
     path: '**',
     component: NotFoundPageComponent
   },
-
- 
-
-
-
+  
 ];
 
 @NgModule({

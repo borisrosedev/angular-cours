@@ -8,11 +8,11 @@ import { ModalRepasService } from '../modal-repas.service';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent {
-  @Input() data!:any
-  @Input() context!:string
-  @Input() index!:number
-  @Input() actionButton!:string
-  @Input() onClickButton!:(obj:any, specifics:any) => void
+  @Input({ required: true}) data!:any
+  @Input({ required: true}) context!:string
+  @Input() index?:number
+  @Input() actionButton?:string
+  @Input() onClickButton?:(obj:any, specifics:any) => void
   translator!:(index:any) => "Lundi" | "Mardi" | "Mercredi" | "Jeudi" | "Vendredi" | undefined
 
   constructor(public modalRepasService:ModalRepasService){
