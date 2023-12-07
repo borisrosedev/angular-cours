@@ -11,9 +11,11 @@
         <!-- le composant form attend vu les @input trois informations : formData, 
         onFormSubmit et context, ici nous lui transmettons ces informations -->
         <app-form 
+        [formInputsModel]="formInputsModel"
         [formData]="formData" 
         [onFormSubmit]="onFormSubmit"
         [context]="'login'"
+        [actionButton]="'Valider'"
         >
         </app-form>
     </section>

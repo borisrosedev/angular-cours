@@ -1,4 +1,4 @@
-<form (submit)="onFormSubmit()" class="form-container">
+<form (submit)="onFormSubmit($event)" class="form-container">
 
     <section class="form-container__title-container">
         <app-title 
@@ -10,11 +10,23 @@
     <section class="form-container__inputs-container">
 
         <app-input 
-        *ngFor="let inputData of formData; let i = index" 
-        [inputData]="inputData">
-
+        [inputData]="formData[0]"
+        [inputModel]="formInputsModel"
+        >
         </app-input>
 
+        <app-input 
+        [inputData]="formData[1]"
+        [inputModel]="formInputsModel"
+        >
+        </app-input>
+
+    </section>
+
+    <section class="form-container__actions-container">
+        <button>
+            {{ actionButton }}
+        </button>
     </section>
 
 

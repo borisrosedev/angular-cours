@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { FormInputModel } from '../interfaces/form-input-model';
+import { BehaviorSubject, Subscription, from, of } from 'rxjs';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-login-page',
@@ -13,19 +15,35 @@ export class LoginPageComponent {
 
     {
       name: 'email',
-      placeholder: 'ex:adam@gmail.com',
+      placeholder: 'Email',
       type: 'email' // pour éviter les attaques XSS / injections SQL
     }, 
     {
       name: 'password',
-      placeholder: '******',
+      placeholder: 'Mot de passe',
       type: 'password'
     }
 
   ]
 
-  onFormSubmit = () => {
-    console.log('🧤 clicked on onFormSubmit')
+  formInputsModel = {
+    email: '',
+    password: ''
+  }
+
+
+  constructor(private authService:AuthService){}
+
+
+  ngOnInit(){
+   
+  }
+
+
+  onFormSubmit = (e:Event) => {
+    this.authService.login(this.formInputsModel.email, this.formInputsModel.password)
+
+    
   }
 
 

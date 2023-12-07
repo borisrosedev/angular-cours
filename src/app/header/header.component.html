@@ -13,8 +13,15 @@
     <section class="header__actions-container"> 
         <!-- attribute binding [icon]="faLogin" -->
         <!-- event binding  (click)="onLoginClick()" -->
-        <fa-icon [icon]="faCart" class="swing" (click)="onCartClick()"></fa-icon>
-        <fa-icon [icon]="faLogin" (click)="onLoginClick()"></fa-icon >
+        <div class="header__actions-container-icon">
+            <fa-icon [icon]="faCart" class="swing" (click)="onCartClick()"></fa-icon>
+            <span class="header__actions-container-icon-badge" *ngIf="nbElementsinCart() > 0">{{ 	nbElementsinCart() }}</span>
+        </div>
+        
+        <fa-icon [icon]="faLogin" (click)="onLoginClick()" *ngIf="!isConnected" ></fa-icon >
+        <fa-icon [icon]="faLogout" (click)="onLoginClick()" *ngIf="isConnected" ></fa-icon >
+        
+
         <!-- <img class="header__icon" src="assets/login.svg"> -->
     </section>
 </header>

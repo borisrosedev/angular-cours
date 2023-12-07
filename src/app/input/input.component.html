@@ -1,9 +1,11 @@
 <article class="input-container">
-     <label for="inputData.name"> {{inputData.name | titlecase}} </label>
+     <label for="inputData.name"> {{inputData.placeholder | titlecase}} </label>
     <input 
     class="input-container__input"
     [name]="inputData.name" 
     [placeholder]="inputData.placeholder"
     [type]="inputData.type"
-    [id]="inputData.name">
+    [id]="inputData.name"
+    [(ngModel)]="inputModel[inputData.name]"
+    >
 </article>

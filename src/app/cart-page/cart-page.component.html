@@ -1,7 +1,23 @@
 <main class="page cart-page">
-
     <video class="cart-page__video" autoplay loop muted>
         <source src="assets/cart.mp4" type="video/mp4">
     </video>
 
+    <div class="cart-page__title-container">
+        <app-title title="Cart" [hNumber]="1"></app-title>
+    </div>
+
+    <section class="cart-page__cart-container">
+        <div class="cart-page__cart-element" *ngFor="let elem of cart; let i = index">
+            <div class="cart-page__cart-element-info">
+                <app-title title={{elem.name}} [hNumber]="4"></app-title>
+                <div class="cart-page__cart-element-info-price">
+                    <p style="margin-right: 50%;">Quantity : 1 </p>
+                    <p *ngIf="elem.price">Sous-total : 1 x {{elem.price}}</p>
+                </div>
+                <button (click)="removeItemFromCart(elem.id)">Remove from cart</button>
+            </div>
+            <img src={{elem.url}} alt="">
+        </div>
+    </section>
 </main>

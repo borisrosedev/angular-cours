@@ -10,9 +10,12 @@ import { FormInputModel } from '../interfaces/form-input-model';
 export class FormComponent {
 
   //! traduction tu ne peux pas "monter" sans que cette props ait été définie
-  @Input() formData!:Array<FormInputModel>
-  @Input() onFormSubmit!:() => void
+  @Input({ required: true}) formData!:Array<FormInputModel>
+  @Input() onFormSubmit!:(e:Event) => void
   @Input() context!:string
+  @Input() actionButton!:string
+  @Input() formInputsModel!:any
+
 
 
   //hook qui vous permet de savoir si les props sont connus par le component
