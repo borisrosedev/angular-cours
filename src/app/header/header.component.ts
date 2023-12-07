@@ -37,8 +37,11 @@ export class HeaderComponent {
     console.log('🧤 clicked on loginIcon')
     if(this.isConnected){
         this.authService.logout()
+        this.router.navigate(['landing-page'])
+    } else {
+      this.router.navigate(['login-page'])
     }
-    this.router.navigate(['login-page'])
+
 
   }
 
