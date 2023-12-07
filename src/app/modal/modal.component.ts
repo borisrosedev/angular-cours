@@ -10,27 +10,36 @@ import { ChangeDetectorRef } from '@angular/core';
   styleUrls: ['./modal.component.scss'],
   animations: [
     trigger('openClose', [
+      // État "ouvert"
       state('open', style({
-        opacity: 1,
-        transform: 'scale(0)',
+        transform: 'scale(1)'
       })),
-      transition('* <=> *', animate('4s ease-in-out', keyframes([
-        style({
-            opacity: 0.5,
-            offset: 1,
-        }),
-        style({
-            transform: 'scale(0.5)',
-            offset:1
-        }),
-      ]))),
+  
+      // État "fermé"
       state('closed', style({
-        opacity: 0,
-        transform: 'scale(1)',
+        transform: 'scale(0)'
       })),
-
+  
+      // Transition de fermé à ouvert et vice versa
+      transition('* <=> *', animate('2s ease-in-out', keyframes([
+        style({ transform: 'scale(0)', offset: 0 }),   // Début de l'animation
+        style({ transform: 'scale(1)', offset: 1 })    // Fin de l'animation
+      ]))),
     ]),
-  ],
+  ]
+
+  //   // Transition de fermé à ouvert
+  //   transition('closed => open', animate('2s ease-in-out', keyframes([
+  //     style({ transform: 'scale(0)', offset: 0 }), // Début de l'ouverture
+  //     style({ transform: 'scale(1)', offset: 1 })  // Fin de l'ouverture
+  //   ]))),
+
+  //   // Transition de ouvert à fermé
+  //   transition('open => closed', animate('2s ease-in-out', keyframes([
+  //     style({ transform: 'scale(1)', offset: 0 }), // Début de la fermeture
+  //     style({ transform: 'scale(0)', offset: 1 })  // Fin de la fermeture
+  //   ]))),
+  
 })
 export class ModalComponent implements OnInit {
   faClose = faXmark;
@@ -38,33 +47,14 @@ export class ModalComponent implements OnInit {
   constructor(private changeDetectorRef: ChangeDetectorRef, 
               public modalRepasService: ModalRepasService) { }
 
-  // ngOnInit(): void {
-  //   // Synchroniser isOpen avec showModal du service
-  //   this.isOpen = this.modalRepasService.showModal;
-  // }
-
   ngOnInit(): void {
 
-    // à cause du ngIf 
-    // setTimeout(() => {
-    //   this.isOpen = true;
-    //   this.changeDetectorRef.detectChanges();
-    // }, 1000);
   }
   
 
   get isOpen(): boolean {
     return this.modalRepasService.showModal;
   }
-
-  // set isOpen(value: boolean) {
-  //   this.modalRepasService.showModal = value;
-  
-  // }
-  // set isOpen(value: boolean) {
-  //   this.modalRepasService.showModal = value;
-  //   //this.changeDetectorRef.detectChanges();
-  // }
   
 
   toggle() {
