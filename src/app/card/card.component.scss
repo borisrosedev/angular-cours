@@ -57,10 +57,11 @@
 }
 
 .card-animation {
+    // bonus
     @for $x from 1 through 5 {
         &--#{$x}{
            opacity: 0;
-           animation: cardAnimation 500ms (1000ms * $x) ease-in-out forwards ; 
+           animation: cardAnimation 200ms (500ms * $x) ease-in-out forwards ; 
         }
     } 
 }

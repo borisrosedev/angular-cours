@@ -32,12 +32,14 @@ export class NotificationComponent implements OnInit, OnDestroy {
 
   constructor(private notificationService:NotificationService){}
 
+  // méthode
   ngOnInit(){
     this.notificationSubscription = this.notificationService.content$.subscribe((data) => {
       this.content = data
     })
   }
 
+  // méthode
   ngOnDestroy(){
     this.notificationSubscription.unsubscribe()
   }

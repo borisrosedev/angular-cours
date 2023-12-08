@@ -21,7 +21,7 @@ import { ChangeDetectorRef } from '@angular/core';
       })),
   
       // Transition de fermé à ouvert et vice versa
-      transition('* <=> *', animate('2s ease-in-out', keyframes([
+      transition('* <=> *', animate('1s ease-in-out', keyframes([
         style({ transform: 'scale(0)', offset: 0 }),   // Début de l'animation
         style({ transform: 'scale(1)', offset: 1 })    // Fin de l'animation
       ]))),

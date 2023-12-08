@@ -1,4 +1,4 @@
-<header>
+<header [@openClose]="showAnimation ? 'open': 'close' ">
     <section class="header__title-container"> 
         <fa-icon [icon]="faLogo" (click)="onLandingClick()" class="header-icon"></fa-icon>
     </section>

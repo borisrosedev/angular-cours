@@ -3,12 +3,25 @@ import { IconDefinition, faRightToBracket, faChessRook, faBookOpen, faClipboardL
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { CartService } from '../cart.service';
+import { animate, keyframes, state, style, transition, trigger } from '@angular/animations';
 
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
+  animations:[
+    trigger('openClose', [
+      state('open', style({
+        transform:'translateY(-50px)'
+      })),
+      state('close', style({
+        transform: 'translateY(0)'
+      })),
+      transition('open => close', animate('0.5s ease-in-out'))
+    ])
+
+  ]
 })
 export class HeaderComponent {
   faLogin = faRightToBracket
@@ -18,10 +31,20 @@ export class HeaderComponent {
   faCarte = faClipboardList
   faCart = faBagShopping
   isConnected!:boolean
+  showAnimation:boolean = false
 
   constructor(private router: Router, private authService: AuthService,private cartService:CartService){}
 
   ngOnInit(){
+    this.showAnimation = true
+    // une fonction native de Javascript de type asychrone
+    setTimeout(() => {
+      // corps de la callback
+      this.showAnimation = false
+    },2000)
+    // je veux que mon animation se déclenche
+
+
     this.authService.user$.subscribe((data) => {
       if(data.id){
         this.isConnected = true
@@ -31,6 +54,7 @@ export class HeaderComponent {
     })
   }
 
+ 
 
   // arrow function
   onLoginClick = () => {

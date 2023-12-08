@@ -1,37 +1,51 @@
 <main class="page admin-page">
 
     <section class="admin-page__menues-container">
-
-        <app-card *ngFor="let menu of menues; let i = index" 
+        <section class="admin-page__action-container">
+            <p> Voir les Menus <fa-icon [icon]="faChevronMenu" (click)="onToggle('menu')" ></fa-icon></p>
+        </section>
+        <section *ngIf="showMenu" class="admin-page__items">
+            <app-card *ngFor="let menu of menues; let i = index" 
             [data]="menu" 
             [context]="'menu'"
             [actionButton]="'Choisir'"
             [index]="i"
-        
-        ></app-card>
+            ></app-card>
+        </section>
 
     </section>
 
     <section class="admin-page__carte-container">
+        <section class="admin-page__action-container">
+            <p> Voir la Carte <fa-icon [icon]="faChevronCarte" (click)="onToggle('carte')" ></fa-icon> </p>
+        </section>
 
-        <app-dish-card 
-        *ngFor="let dish of carte; let i = index" 
-        [data]="dish"
-        [context]="'dish'"
-      
-        >
-        </app-dish-card>
+        <section *ngIf="showCarte" class="admin-page__items">
+            <app-dish-card 
+            *ngFor="let dish of carte; let i = index" 
+            [data]="dish"
+            [context]="'dish'"
+            >
+            </app-dish-card>
+        </section>
         
     </section>
 
     <section class="admin-page__users-container">
-        <app-card  
-        *ngFor="let user of users; let i = index" 
-        [data]="user" 
-        [context]="'user'"
-        [index]="i"
-        >
-        </app-card>    
+        <section class="admin-page__action-container">
+            <p> Voir les Utilisateurs <fa-icon [icon]="faChevronUser" (click)="onToggle('user')" ></fa-icon></p>
+        </section>
+        <section *ngIf="showUser" class="admin-page__items">
+            <app-card  
+            *ngFor="let user of users; let i = index" 
+            [data]="user" 
+            [context]="'user'"
+            [index]="i"
+            >
+            </app-card> 
+
+        </section>
+         
     </section>
 
 
