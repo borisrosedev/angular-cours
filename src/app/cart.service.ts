@@ -11,6 +11,8 @@ export class CartService {
   }
 
   addToCart(element:any){
+
+    console.log('🍟 --> [modal-page] sending ', element)
     // ajoute un nouvel élément au tableau this.cart
     // au niveau de l'attribut
     this.cart.push(element)

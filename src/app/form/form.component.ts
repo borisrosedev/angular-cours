@@ -18,6 +18,7 @@ export class FormComponent {
 
 
 
+
   //hook qui vous permet de savoir si les props sont connus par le component
   // lorsqu'il monte / il est créé
   ngOnInit(){

@@ -34,5 +34,11 @@ export class CardComponent {
     console.log('❎ card component has been unmounted')
   }
 
+  openModal(dish:any){
+    this.modalRepasService.selectedDish = dish;
+    console.log('🍔',this.modalRepasService.selectedDish)
+    this.modalRepasService.showModal = true
+  }
+
 
 }

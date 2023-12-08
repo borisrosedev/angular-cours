@@ -1,11 +1,11 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-title',
   templateUrl: './title.component.html',
   styleUrls: ['./title.component.scss']
 })
-export class TitleComponent {
+export class TitleComponent implements OnInit, OnDestroy {
 
   @Input() title!:string
   @Input() hNumber!:number
@@ -16,4 +16,10 @@ export class TitleComponent {
     console.log('✅ Title component has mounted', this.title)
     this.messageApapa.emit('Salut Papa')
   }
+
+  ngOnDestroy(){
+
+  }
+
+
 }

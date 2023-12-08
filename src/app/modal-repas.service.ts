@@ -5,6 +5,11 @@ import { Injectable } from '@angular/core';
 })
 export class ModalRepasService {
   showModal = false
+  selectedDish:any
+  optionsDish!:any[]
 
   constructor() { }
+
+  
+
 }

@@ -1,11 +1,23 @@
-<article class="input-container">
-     <label for="inputData.name"> {{inputData.placeholder | titlecase}} </label>
-    <input 
-    class="input-container__input"
-    [name]="inputData.name" 
-    [placeholder]="inputData.placeholder"
-    [type]="inputData.type"
-    [id]="inputData.name"
-    [(ngModel)]="inputModel[inputData.name]"
-    >
+<article [class]="context === 'login' ? 'input-container input-container--login': 'input-container input-container--menu'" [ngSwitch]="context">
+    <ng-container *ngSwitchCase="'login'">
+        <label for="inputData.name"> {{inputData.placeholder | titlecase}} </label>
+        <input 
+        class="input-container__input"
+        [name]="inputData.name" 
+        [placeholder]="inputData.placeholder"
+        [type]="inputData.type"
+        [id]="inputData.name"
+        [(ngModel)]="inputModel[inputData.name]"
+        >
+    </ng-container>
+    <ng-container *ngSwitchCase="'menu'">
+        <label [for]="inputData.value"> {{ inputData.value}} </label>
+        <input 
+        class="input-container__input--"
+        name="choix-du-plat" 
+        type="radio"
+        [value]="inputData.value"
+        >
+    </ng-container>
+  
 </article>

@@ -14,7 +14,7 @@
                         <img [src]="dish.url">
                 </section>
                 <footer class="card-container__actions-container">
-                        <button (click)="modalRepasService.showModal = true" [attr.aria-label]="actionButton"> {{ actionButton }} </button>
+                        <button (click)="openModal(dish)" [attr.aria-label]="actionButton"> {{ actionButton }} </button>
                 </footer>
             </article>
         </section>

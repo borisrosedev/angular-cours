@@ -17,3 +17,58 @@
     background-color: white;
     z-index: 10;
 }
+
+
+.plat-choice {
+
+    display: flex;
+    margin: 10px;
+    text-shadow: 1px 0px 1px black;
+    color: black;
+
+
+
+
+    &__img {
+        justify-content: center;
+        width: 300px;
+        height: 320px;
+        border-radius: 7px;
+        margin: 15px 0;
+        border-color: rgb(134, 123, 182);
+        border: 2px solid;
+    }
+
+
+
+    &__button {
+        display: flex;
+        justify-content: center;
+
+
+        &__valide {
+          
+            cursor: pointer;
+              
+        }
+
+        
+
+    }
+}
+
+.plat-choice2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    
+    
+}
+
+#action {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    
+}

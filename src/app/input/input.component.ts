@@ -11,12 +11,14 @@ export class InputComponent implements OnInit, OnDestroy {
 
   //tu vas recevoir une valeur qui implémente l'interface FormInputModel
   @Input() inputData!:FormInputModel
-  @Input() inputModel!:any
+  @Input() inputModel?:any
+  @Input({ required: true }) context!:string
+
 
   
   ngOnInit(){
     console.log('✅ inputData', this.inputData)
-    console.log('✅ inputModel', this.inputModel)
+    //console.log('✅ inputModel', this.inputModel)
   }
 
   ngOnDestroy(){

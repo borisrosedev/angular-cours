@@ -1,4 +1,4 @@
-<section class="modal" [@openClose]="isOpen ? 'open' : 'closed'">
+<section class="modal" [@openClose]="isOpen ?'open':'closed' ">
     <section id="action">
         <fa-icon 
             [icon]="faClose" 
@@ -6,7 +6,33 @@
             >
         </fa-icon>
 
-        <ng-content select=".class-1"></ng-content>
+    </section>
+    <section *ngIf="isOpen && modalRepasService.selectedDish">
+        <section class="plat-choice">
+            <aside>
+                <app-title title={{modalRepasService.selectedDish.title}} [hNumber]="2" class="plat-choice__title"></app-title> 
+                <p>{{modalRepasService.selectedDish.dish.description}}</p>
+                <h3><strong>Ingrédients:</strong></h3>
+                <ul>
+                    <li *ngFor="let ingredient of modalRepasService.selectedDish.dish.ingredients">
+                        {{ ingredient }}
+                    </li>
+                </ul>
+            </aside>
+            <aside>
+                <img [src]="modalRepasService.selectedDish.url" alt="image plat" class="plat-choice__img">
+            </aside>
+        </section>
+        <form class="plat-choice2">
+            <app-input 
+            *ngFor="let option of modalRepasService.optionsDish; let i = index" 
+            [inputData]="option" 
+            [context]="'menu'">
+            </app-input>
+
+            <fa-icon [icon]="faCartAdd" (click)="onButtonClick()" class="plat-choice__button__valid"></fa-icon>
+    
+        </form>
     </section>
 
     

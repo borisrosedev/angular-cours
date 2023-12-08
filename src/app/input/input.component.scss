@@ -1,7 +1,19 @@
 .input-container {
     display: flex;
     flex-direction: column;
-    color: white;
+
+    &--login {
+        color: white;
+    }
+
+    &--menu {
+        color: black;
+        margin: 10px;
+
+        
+        
+    }
+   
 
     label {
         margin: 10px 0;
