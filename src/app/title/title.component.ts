@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-title',
@@ -9,9 +9,11 @@ export class TitleComponent {
 
   @Input() title!:string
   @Input() hNumber!:number
+  @Output() messageApapa = new EventEmitter<string>()
 
 
   ngOnInit(){
     console.log('✅ Title component has mounted', this.title)
+    this.messageApapa.emit('Salut Papa')
   }
 }

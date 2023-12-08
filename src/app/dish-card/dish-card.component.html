@@ -1,20 +1,23 @@
-<div [ngSwitch]="context" class="dish-card-component">
+<div [ngSwitch]="context" class="dish-card-component" [attr.aria-label]="data.name" >
     <ng-container *ngSwitchCase="'dish'">
         <app-title title={{data.name}} [hNumber]="3"></app-title>
         <div class="dish-card-component__data">
             <p>{{data.description}}</p>
-            <img src={{data.url}} alt="" width="60px" class="dish-card-component__image">
+            <img src={{data.url}} [alt]="data.name"  class="dish-card-component__image">
             <div class="dish-card-component__ingredients-container" *ngIf="data.ingredients">
                 <app-title title="Ingrédients:" [hNumber]="5"></app-title>
-                <span *ngFor="let ingr of data.ingredients; let i = index">
+                <span *ngFor="let ingr of data.ingredients;">
                     {{ingr}},
                 </span>
             </div>
             <div class="dish-card-component__price-container">
-                <p>{{"Price: "}} €{{data.price}}</p>
+                <p>{{"Price: "}} {{data.price | currency }}</p>
             </div>
             <button (click)="onButtonClick()">
                 Ajouter au Panier
+            </button>
+            <button (click)="onIconClick()">
+                <fa-icon [icon]="isHeartChecked ? heartChecked : heartUnchecked" [ngStyle]="isHeartChecked ? fullHeartStyle : emptyHeartStyle "></fa-icon>
             </button>
         </div>
     </ng-container>
